@@ -1,45 +1,414 @@
 <!DOCTYPE html>
-<html lang='pt-BR'>
+<html lang="pt-BR">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Loja Mega Ofertas</title>
-<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José Ricardo | Obras e Alvenaria</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{background:#f3f4f6}
-.header{background:linear-gradient(135deg,#ff0080,#ff4da6);color:#fff;padding:25px;text-align:center}
-.header h1{font-size:28px}
-.grid{padding:15px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;max-width:1100px;margin:auto}
-.card{background:#fff;border-radius:16px;padding:12px;box-shadow:0 5px 15px rgba(0,0,0,.1)}
-.img{height:120px;background:linear-gradient(135deg,#ddd,#eee);border-radius:10px;margin-bottom:8px}
-h3{font-size:14px}.price{color:#ff0080;font-weight:800}.btn{display:block;text-align:center;background:#ff0080;color:#fff;padding:8px;border-radius:10px;text-decoration:none;margin-top:8px}
-.cookie{position:fixed;bottom:10px;left:10px;right:10px;background:#fff;padding:15px;border-radius:16px;box-shadow:0 5px 25px rgba(0,0,0,.15)}
-.cookie button{margin-top:8px;width:100%;padding:10px;border:none;border-radius:10px;background:#2563eb;color:#fff}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4f7fb;
+color:#111827;
+}
+
+/* TOPO */
+
+header{
+background:linear-gradient(135deg,#0f172a,#1e40af);
+padding:15px;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+color:#fff;
+}
+
+.logo{
+font-size:22px;
+font-weight:800;
+}
+
+.btn-top{
+background:#22c55e;
+padding:10px 18px;
+border-radius:50px;
+text-decoration:none;
+color:#fff;
+font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+
+padding:70px 20px;
+
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,.6),
+rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600');
+
+background-size:cover;
+background-position:center;
+
+color:#fff;
+}
+
+.hero h1{
+
+font-size:42px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.hero p{
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.7;
+
+opacity:.9;
+}
+
+.hero-btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+background:#22c55e;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+font-weight:700;
+
+text-decoration:none;
+
+color:#fff;
+}
+
+/* SERVIÇOS */
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:50px 20px;
+}
+
+.title{
+
+font-size:32px;
+
+text-align:center;
+
+margin-bottom:30px;
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:18px;
+}
+
+.card{
+
+background:#fff;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+}
+
+.card h3{
+
+margin-bottom:10px;
+}
+
+/* SOBRE */
+
+.about{
+
+background:#fff;
+
+padding:30px;
+
+margin-top:50px;
+
+border-radius:25px;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+line-height:1.9;
+}
+
+/* RODAPÉ */
+
+footer{
+
+background:#0f172a;
+
+color:#fff;
+
+padding:30px;
+
+margin-top:50px;
+
+text-align:center;
+}
+
+/* WHATS */
+
+.whatsapp{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+background:#25D366;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+color:#fff;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.3);
+}
+
+/* COOKIE */
+
+.cookie{
+
+position:fixed;
+
+bottom:10px;
+
+left:10px;
+
+right:10px;
+
+background:#fff;
+
+padding:15px;
+
+border-radius:18px;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.15);
+
+z-index:999;
+}
+
+.cookie button{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+margin-top:10px;
+
+background:#2563eb;
+
+color:#fff;
+
+border-radius:10px;
+
+font-weight:700;
+}
+
 </style>
-</head><body>
-<div class='header'><h1>🛍️ Mega Loja Online</h1><p>20 produtos com ofertas especiais</p></div>
-<div class='grid'>
-<div class='card'><div class='img'></div><h3>Smartphone Pro</h3><div class='price'>R$799</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Notebook Slim</h3><div class='price'>R$2499</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Fone Bluetooth</h3><div class='price'>R$89</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Smartwatch</h3><div class='price'>R$149</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>TV 50"</h3><div class='price'>R$1999</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Cadeira Gamer</h3><div class='price'>R$599</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Mouse RGB</h3><div class='price'>R$59</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Teclado Mecânico</h3><div class='price'>R$149</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Caixa de Som</h3><div class='price'>R$99</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Câmera HD</h3><div class='price'>R$259</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 11</h3><div class='price'>R$79</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 12</h3><div class='price'>R$99</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 13</h3><div class='price'>R$199</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 14</h3><div class='price'>R$29</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 15</h3><div class='price'>R$39</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 16</h3><div class='price'>R$159</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 17</h3><div class='price'>R$89</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 18</h3><div class='price'>R$119</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 19</h3><div class='price'>R$69</div><a class='btn'>Comprar</a></div>
-<div class='card'><div class='img'></div><h3>Produto 20</h3><div class='price'>R$89</div><a class='btn'>Comprar</a></div>
+</head>
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+🧱 José Ricardo
 </div>
-<div class='cookie' id='cookie'>🍪 Utilizamos cookies para melhorar sua experiência.<button onclick="document.getElementById('cookie').style.display='none'">Aceitar</button></div>
-</body></html>
+
+<a href="https://wa.me/558199070366"
+class="btn-top">
+Solicitar orçamento
+</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>
+Especialistas em Obras e Reformas
+</h1>
+
+<p>
+Construção, alvenaria, reformas e acabamento profissional em Jaboatão dos Guararapes e região.
+</p>
+
+<a href="https://wa.me/558199070366"
+class="hero-btn">
+Chamar no WhatsApp
+</a>
+
+</section>
+
+<div class="container">
+
+<h2 class="title">
+Nossos Serviços
+</h2>
+
+<div class="grid">
+
+<div class="card"><h3>🏠 Construção Residencial</h3><p>Projetos completos.</p></div>
+
+<div class="card"><h3>🧱 Alvenaria</h3><p>Serviço profissional.</p></div>
+
+<div class="card"><h3>🔨 Reformas</h3><p>Reformas completas.</p></div>
+
+<div class="card"><h3>🎨 Pintura</h3><p>Acabamento de qualidade.</p></div>
+
+<div class="card"><h3>🪚 Piso</h3><p>Instalação e acabamento.</p></div>
+
+<div class="card"><h3>🚪 Instalações</h3><p>Serviços gerais.</p></div>
+
+<div class="card"><h3>🏢 Comercial</h3><p>Projetos empresariais.</p></div>
+
+<div class="card"><h3>🏗️ Ampliações</h3><p>Expansão de ambientes.</p></div>
+
+<div class="card"><h3>⚡ Manutenção</h3><p>Serviços rápidos.</p></div>
+
+<div class="card"><h3>📐 Acabamento</h3><p>Detalhes profissionais.</p></div>
+
+<div class="card"><h3>🪵 Reboco</h3><p>Acabamento perfeito.</p></div>
+
+<div class="card"><h3>🚧 Obras Gerais</h3><p>Soluções completas.</p></div>
+
+</div>
+
+
+<div class="about">
+
+<h2>Sobre a empresa</h2>
+
+<p>
+
+<strong>
+63.132.570 JOSE RICARDO DA SILVA
+</strong>
+
+<br><br>
+
+Especialista em obras de alvenaria.
+
+Atendimento em Jaboatão dos Guararapes - PE.
+
+<br><br>
+
+📞 (81) 9907-0366
+
+<br>
+
+CNPJ: 63.132.570/0001-55
+
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+© José Ricardo Obras e Alvenaria
+
+<br><br>
+
+Todos os direitos reservados
+
+</footer>
+
+
+<a class="whatsapp"
+href="https://wa.me/558199070366">
+
+💬
+
+</a>
+
+<div class="cookie" id="cookie">
+
+🍪 Utilizamos cookies para melhorar sua experiência.
+
+<button onclick="
+document.getElementById('cookie').style.display='none'
+">
+
+Aceitar e continuar
+
+</button>
+
+</div>
+
+</body>
+</html>
